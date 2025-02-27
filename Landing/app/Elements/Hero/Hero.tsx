@@ -38,7 +38,7 @@ function Hero() {
                         className="text-lg text-gray-400 mt-4 text-center w-fit flex items-center jusitfy-center mx-auto gap-1.5"
                         animateDuration={0.5}
                         rotateDuration={2000}
-                        rotateDelay={5000}
+                        rotateDelay={2000}
                         rotateClassName='text-gray-800'
                     />
                     </span>
