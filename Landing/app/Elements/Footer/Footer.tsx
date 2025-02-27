@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedin, FaLinkedinIn } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import Image from 'next/image';
 

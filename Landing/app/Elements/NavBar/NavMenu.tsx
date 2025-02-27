@@ -1,8 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import SideBar from './SideBar';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
