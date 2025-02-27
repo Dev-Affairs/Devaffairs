@@ -4,16 +4,30 @@ import Image from 'next/image';
 import { IoMdClose } from 'react-icons/io';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
+interface MenuItem {
+    name: string;
+    link?: string;
+    image?: string;
+    description?: string;
+    items?: Array<{ name: string; link: string }>;
+}
 
-interface sideBarProps {
-    navMenuDetails: Array<any>,
-    sidebarOpen: boolean,
+interface NavMenu {
+    name: string;
+    link?: string;
+    page?: string;
+    menuItems?: MenuItem[];
+}
+
+interface SideBarProps {
+    navMenuDetails: NavMenu[];
+    sidebarOpen: boolean;
     setSidebarOpen: (value: boolean) => void;
 }
 
-
-function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) {
-    const [activeMenuItem, setActiveMenuItem] = useState('');
+function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: SideBarProps) {
+    const [activeMenuItem, setActiveMenuItem] = useState<string>('');
+    
     useEffect(() => {
         if (sidebarOpen) {
             document.body.classList.add("overflow-hidden");
@@ -46,7 +60,7 @@ function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) 
                     </div>
                 </div>
                 <div className="flex flex-col py-4 overflow-y-auto h-[calc(100vh-80px)]">
-                    {navMenuDetails.map((navItem: any, navItemIndex: number) => (
+                    {navMenuDetails.map((navItem, navItemIndex) => (
                         navItem.menuItems && navItem.menuItems.length ? (
                             <div className="w-full flex flex-col h-max" key={navItemIndex}>
                                 <div
@@ -57,10 +71,10 @@ function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) 
                                 >
                                     {navItem.name}
                                     {activeMenuItem === navItem.name ? (
-                                                                <FaChevronUp className='text-xs' />
-                                                            ) : (
-                                                                <FaChevronDown className='text-xs' />
-                                                            )}
+                                        <FaChevronUp className='text-xs' />
+                                    ) : (
+                                        <FaChevronDown className='text-xs' />
+                                    )}
                                 </div>
                                 <div
                                     className={`flex flex-col gap-2 px-6 overflow-auto text-black border-y border-gray-200 transition-all duration-300 ease-in-out ${
@@ -69,10 +83,10 @@ function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) 
                                             : "max-h-0 opacity-0"
                                     }`}
                                 >
-                                    {navItem.menuItems.map((menuItem: any, index: number) =>
+                                    {navItem.menuItems.map((menuItem, index) =>
                                         menuItem.items && menuItem.items.length ? (
                                             <ul className="mb-2 md:mb-0" key={index}>
-                                                {menuItem.items.map((item: any, itemIndex: number) => (
+                                                {menuItem.items.map((item, itemIndex) => (
                                                     <li key={itemIndex} className='w-full py-2'>
                                                         <Link href={item.link} className="hover:underline hover:text-blue-600 w-full block">
                                                             {item.name}
@@ -91,13 +105,12 @@ function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) 
                                                         className="absolute inset-0 bg-center bg-cover transition-transform duration-300 scale-100 hover:scale-105 bg-local bg-gray-500 bg-no-repeat rounded-lg bg-blend-multiply hover:bg-blend-soft-light "
                                                         style={{ backgroundImage: `url('${menuItem.image}')` }}
                                                     ></span>
-
                                                     <p className="relative z-10 max-w-xl mb-5 font-semibold leading-tight tracking-tight text-white">
                                                         {menuItem.description}
                                                     </p>
                                                 </a>
                                             </div>
-                                        ) : ''
+                                        ) : null
                                     )}
                                 </div>
                             </div>
@@ -111,9 +124,7 @@ function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) 
                             </Link>
                         ) : navItem.page ? (
                             <span  onClick={() => window.open(navItem.page, "_blank", "noopener,noreferrer")}  className="px-4 py-3 text-black hover:bg-orange-600 hover:text-white transition" key={navItemIndex}>{navItem.name}</span>
-                        )
-                        : 
-                        ''
+                        ) : null
                     ))}
                 </div>
             </aside>
