@@ -4,7 +4,15 @@ import Image from 'next/image';
 import { IoMdClose } from 'react-icons/io';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: any) {
+
+interface sideBarProps {
+    navMenuDetails: Array<any>,
+    sidebarOpen: boolean,
+    setSidebarOpen: (value: boolean) => void;
+}
+
+
+function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: sideBarProps) {
     const [activeMenuItem, setActiveMenuItem] = useState('');
     useEffect(() => {
         if (sidebarOpen) {
