@@ -24,15 +24,18 @@ export function RotateWords({
     const [index, setIndex] = React.useState(0)
 
     React.useEffect(() => {
-        let rotateInterval: string | number | NodeJS.Timeout | undefined;
-        setTimeout(() => {
+        let rotateInterval: NodeJS.Timeout;
+        const startTimeout = setTimeout(() => {
             rotateInterval = setInterval(() => {
                 setIndex((prevIndex) => (prevIndex + 1) % words.length)
             }, rotateDuration)
         }, rotateDelay)
-        // Clean up interval on unmount
-        return () => clearInterval(rotateInterval)
-    }, [])
+        
+        return () => {
+            clearTimeout(startTimeout);
+            clearInterval(rotateInterval);
+        }
+    }, [rotateDelay, rotateDuration, words.length])
 
     return (
         <div className={className}>
