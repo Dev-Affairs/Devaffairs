@@ -7,11 +7,31 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-function NavMenu() {
-    const [megaMenuState, setMegaMenuState] = useState<{ status: boolean, data: any | null }>({ status: false, data: null });
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+interface MenuItem {
+    name: string;
+    link?: string;
+    image?: string;
+    description?: string;
+    items?: Array<{ name: string; link: string }>;
+}
 
-    const navMenuDetails = [
+interface NavMenuItem {
+    name: string;
+    link?: string;
+    page?: string;
+    menuItems?: MenuItem[];
+}
+
+interface MegaMenuState {
+    status: boolean;
+    data: NavMenuItem | null;
+}
+
+function NavMenu() {
+    const [megaMenuState, setMegaMenuState] = useState<MegaMenuState>({ status: false, data: null });
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+
+    const navMenuDetails: NavMenuItem[] = [
         {
             name: "Products",
             menuItems: [
@@ -26,7 +46,7 @@ function NavMenu() {
                     description: "Samms."
                 },
                 {
-                    "items": [
+                    items: [
                         {
                             name: "Our Blog",
                             link: "ourBlogs"
@@ -35,7 +55,8 @@ function NavMenu() {
                             name: "Terms & Conditions",
                             link: "terms"
                         }
-                    ]
+                    ],
+                    name: ""
                 }
             ]
         },
@@ -76,20 +97,11 @@ function NavMenu() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [megaMenuState.status]);
 
-    const onClickMenuItem = (item: any) => {
-        console.log("onClickMenuItem", megaMenuState.status)
-        if (megaMenuState.status) {
-            setMegaMenuState({
-                status: false,
-                data: item
-            })
-        }
-        else {
-            setMegaMenuState({
-                status: true,
-                data: item
-            })
-        }
+    const onClickMenuItem = (item: NavMenuItem) => {
+        setMegaMenuState(prevState => ({
+            status: prevState.status ? false : true,
+            data: item
+        }));
     }
     return (
         <>
@@ -108,8 +120,7 @@ function NavMenu() {
                         <Link href={item.link} className="hover:text-blue-600" key={index}>{item.name}</Link>
                     ) : item.page ? (
                         <span onClick={() => window.open(item.page, "_blank", "noopener,noreferrer")} className="hover:text-blue-600" key={index}>{item.name}</span>
-                    ) :
-                        ''
+                    ) : null
                 ))}
             </div>
 
@@ -134,10 +145,10 @@ function NavMenu() {
                                         {megaMenuState.data.name}
                                     </div>
                                     <div className='grid md:grid-cols-3 gap-6'>
-                                        {megaMenuState.data.menuItems.map((menuItem: any, index: number) => (
+                                        {megaMenuState.data?.menuItems?.map((menuItem, index) => (
                                             menuItem.items && menuItem.items.length ? (
                                                 <ul className="mb-4 space-y-4 md:mb-0" key={index}>
-                                                    {menuItem.items.map((item: any, itemIndex: number) => (
+                                                    {menuItem.items.map((item, itemIndex) => (
                                                         <li key={itemIndex}>
                                                             <a href="#" className="hover:underline hover:text-blue-600">
                                                                 {item.name}
@@ -159,8 +170,7 @@ function NavMenu() {
                                                         {menuItem.description}
                                                     </p>
                                                 </a>
-
-                                            ) : ''
+                                            ) : null
                                         ))}
                                     </div>
                                 </div>
@@ -172,7 +182,7 @@ function NavMenu() {
 
             <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} navMenuDetails={navMenuDetails} />
         </>
-    )
+    );
 }
 
-export default NavMenu
+export default NavMenu;
