@@ -1,37 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import SocialIcons from '@/app/Components/SocialIcons/SocialIcons';
 
-const socialLinks = [
-    {
-        name: 'Facebook',
-        link: 'https://www.facebook.com/devaffairs.dev',
-        icon: <FaFacebookF />,
-        className: "bg-blue-600 hover:bg-blue-700"
-    },
-    {
-        name: 'Twitter',
-        link: '#',
-        icon: <FaXTwitter />,
-        className: "bg-gray-800 hover:bg-gray-900"
-    },
-    {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/devaffairs.dev',
-        icon: <FaInstagram />,
-        className: "bg-pink-500 hover:bg-pink-600"
-    },
-    {
-        name: 'Linkedin',
-        link: 'https://www.linkedin.com/company/devaffairs',
-        icon: <FaLinkedinIn />,
-        className: "bg-blue-700 hover:bg-blue-800"
-    }
-];
 
 const pages = [
     {
@@ -87,20 +60,7 @@ const Footer = () => {
                     <p className="mt-4 text-sm text-gray-800">
                         Design Your Space On the Internet
                     </p>
-                    <motion.div className="flex space-x-4 mt-6 text-center justify-center md:justify-start" variants={staggerContainer}>
-                        {socialLinks.map((link, index) => (
-                            <motion.a
-                                href={link.link}
-                                className={`p-3 rounded-full text-white transition duration-300 ${link.className}`}
-                                key={index}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variants={fadeUpVariant}
-                            >
-                                {link.icon}
-                            </motion.a>
-                        ))}
-                    </motion.div>
+                    <SocialIcons animate={true}/>
                 </motion.div>
 
                 {/* Navigation Links */}
@@ -119,10 +79,10 @@ const Footer = () => {
                         <h3 className="font-bold">Links</h3>
                         <ul className="mt-3 space-y-2">
                             {links.map((link, index) => (
-                                    <li key={index}>
-                                        <Link href={link.link}>{link.name}</Link>
-                                    </li>
-                                ))}
+                                <li key={index}>
+                                    <Link href={link.link}>{link.name}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </motion.div>

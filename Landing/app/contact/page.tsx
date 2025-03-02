@@ -1,0 +1,34 @@
+import { Metadata } from "next";
+import ContactPageWrapper from "../Wrappers/ContactPageWrapper";
+
+export const metadata: Metadata = {
+  title: "Dev Affairs - Contact Us",
+  description: "Build Your Digital Solution",
+  keywords: ["Web Development", "Web Design", "App Development", "SEO", "Digital Marketing", "Dev Affairs"],
+  alternates: {
+    canonical: `https://www.devaffairs.dev`,
+  },
+  openGraph: {
+    title: "Dev Affairs: Build Your Digital Solution",
+    description: "We focus on building High Performance, secure, and scalable solutions that align with your goals and drive success.",
+    url: `https://www.devaffairs.dev/`,
+    type: 'website',
+    siteName: 'Dev Affairs',
+    images: [
+      {
+        url: `https://www.devaffairs.dev/logo/og.svg`,
+        width: 1200,
+        height: 630
+      }
+    ],
+  }
+};
+
+export default function Home() {
+
+  return (
+    <>
+      <ContactPageWrapper />
+    </>
+  );
+}

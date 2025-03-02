@@ -6,12 +6,13 @@ import { scrollToView } from '@/app/Services/AppService';
 import { motion } from 'framer-motion';
 
 const techs = [
-    { name: 'Flutter', pageLink: "https://flutter.dev", src: '/tech/Flutter.svg' },
+    { name: 'Angular', pageLink: "https://angular.dev", src: '/tech/Angular.svg' },
     { name: 'React', pageLink: "https://react.dev", src: '/tech/React.svg' },
     { name: 'Next', pageLink: "https://nextjs.org", src: '/tech/NextJs.svg' },
+    { name: 'Flutter', pageLink: "https://flutter.dev", src: '/tech/Flutter.svg' },
+    { name: 'Python', pageLink: "https://www.python.org", src: '/tech/Python.svg' },
     { name: 'Go', pageLink: "https://go.dev", src: '/tech/Go.svg' },
     { name: 'Node Js', pageLink: "https://nodejs.org", src: '/tech/NodeJs.svg' },
-    { name: 'Angular', pageLink: "https://angular.dev", src: '/tech/Angular.svg' },
     { name: 'Cloudflare', pageLink: "https://www.cloudflare.com", src: '/tech/Cloudflare.svg' },
     { name: 'AWS', pageLink: "https://aws.amazon.com", src: '/tech/AWS.svg' },
     { name: 'MongoDB', pageLink: "https://www.mongodb.com", src: '/tech/MongoDB.svg' },
