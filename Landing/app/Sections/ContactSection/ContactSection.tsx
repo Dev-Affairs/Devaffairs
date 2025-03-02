@@ -19,7 +19,7 @@ export default function ContactSection() {
     };
 
     return (
-        <div className="my-16 md:my-0 container mx-auto flex flex-col md:flex-row justify-center items-center p-6 md:p-12 bg-white text-black min-h-screen">
+        <div className="my-16 md:my-0 container mx-auto flex flex-col md:flex-row justify-center items-center p-6 md:p-12 text-black min-h-screen">
             <motion.div
                 className="md:w-1/2 w-full p-6"
                 initial={{ opacity: 0, x: -50 }}
