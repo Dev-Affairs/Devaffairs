@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { RotateWords } from "@/app/Components/RotateWords/RotateWords";
-import ScrollDown from "@/app/Components/ScrollDown/ScrollDown";
 import { scrollToView } from "@/app/Services/AppService"
 
 function Hero() {
@@ -79,17 +78,6 @@ function Hero() {
                         rotateClassName="text-gray-800"
                     />
                 </motion.span>
-
-                {/* Smooth Scroll Button */}
-                {/* <motion.div
-                    className="mt-10 cursor-pointer"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
-                    onClick={() => scrollToView("feature-section")}
-                >
-                    <ScrollDown sectionId="feature-section" />
-                </motion.div> */}
             </motion.section>
         </div>
     );
