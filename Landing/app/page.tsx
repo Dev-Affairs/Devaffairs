@@ -1,6 +1,5 @@
 "use client";
 import Hero from "./Elements/Hero/Hero";
-import BlogSection from "./Sections/BlogSection/BlogSection";
 import ContactRefSection from "./Sections/ContactRefSection/ContactRefSection";
 import FeatureSection from "./Sections/FeatureSection/FeatureSection";
 import StepsSection from "./Sections/StepsSection/StepsSection";

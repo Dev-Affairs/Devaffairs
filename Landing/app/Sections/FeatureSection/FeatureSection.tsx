@@ -7,7 +7,6 @@ import { GrAndroid } from "react-icons/gr";
 import { FaApple } from "react-icons/fa";
 import { SlGlobe } from "react-icons/sl";
 import { GoDotFill } from "react-icons/go";
-import { AiOutlineStock } from "react-icons/ai";
 
 const FeatureSection = () => {
   const services = [

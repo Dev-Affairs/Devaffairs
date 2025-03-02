@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import Image from 'next/image';
-import { MdMailOutline } from 'react-icons/md';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
@@ -132,7 +131,6 @@ const Footer = () => {
                 <motion.div className='flex flex-col space-y-4' variants={fadeUpVariant}>
                     <h3 className="font-bold text-gray-800">Mail us</h3>
                     <div className='flex text-center flex-row gap-2 w-full justify-center md:justify-start text-xl'>
-                        {/* <MdMailOutline className="text-gray-700" /> */}
                         <span className="text-gray-700 cursor-pointer">business@devaffairs.dev</span>
                     </div>
                 </motion.div>
