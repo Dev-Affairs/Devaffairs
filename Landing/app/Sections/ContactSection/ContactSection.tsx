@@ -4,7 +4,7 @@ import HeaderText from '@/app/Components/HeaderText/HeaderText';
 import SocialIcons from '@/app/Components/SocialIcons/SocialIcons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 export default function ContactSection() {
     const [form, setForm] = useState({ name: '', email: '', purpose: '', message: '' });
