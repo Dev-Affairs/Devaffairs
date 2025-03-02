@@ -6,6 +6,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface MenuItem {
     name: string;
@@ -79,6 +80,14 @@ function NavMenu() {
             data: item
         }));
     }
+    const pathname = usePathname();
+
+
+    useEffect(() => {
+        setSidebarOpen(false);
+        setMegaMenuState({ status: false, data: null });
+    }, [pathname, setSidebarOpen]);
+
     return (
         <>
             <div className="hidden lg:flex space-x-6 text-gray-700 lg:justify-center lg:items-center select-none" ref={navMenuRef}>

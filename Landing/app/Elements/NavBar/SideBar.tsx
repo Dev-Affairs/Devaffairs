@@ -86,7 +86,7 @@ function SideBar({ navMenuDetails, sidebarOpen, setSidebarOpen }: SideBarProps) 
                                             <ul className="mb-2 md:mb-0" key={index}>
                                                 {menuItem.items.map((item, itemIndex) => (
                                                     <li key={itemIndex} className='w-full py-2'>
-                                                        <Link href={item.link} className="hover:underline hover:text-blue-600 w-full block">
+                                                        <Link href={item.link} className="hover:underline w-full block">
                                                             {item.name}
                                                         </Link>
                                                     </li>
