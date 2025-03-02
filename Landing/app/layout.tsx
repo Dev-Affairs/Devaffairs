@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/Elements/NavBar/NavBar";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 import Footer from "@/app/Elements/Footer/Footer";
 import BackgroundBlur from "./Elements/Backgrounds/BackgroundBlur/BackgroundBlur";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         <NavBar />
         <main className="relative z-10">{children}</main>
         <SpeedInsights />
+        <Analytics />
         <Footer />
       </body>
     </html>
