@@ -13,6 +13,7 @@ interface MenuItem {
     image?: string;
     description?: string;
     items?: Array<{ name: string; link: string }>;
+    page?: string;
 }
 
 interface NavMenuItem {
@@ -36,9 +37,10 @@ function NavMenu() {
             name: "Products",
             menuItems: [
                 {
-                    name: "Invozapp",
-                    image: "/images/dasboard_1.jpg",
-                    description: "Inventory Management Solution."
+                    name: "Invozap",
+                    image: "/brand/logo/invozap.webp",
+                    description: "Inventory Management Solution.",
+                    page: "https://invozap.com"
                 }
             ]
         },
@@ -131,19 +133,19 @@ function NavMenu() {
                                                     ))}
                                                 </ul>
                                             ) : menuItem.image ? (
-                                                <a
-                                                    href="#"
-                                                    className={`p-8 rounded-lg bg-blend-multiply hover:bg-blend-soft-light h-[15vh] relative overflow-hidden gap-1 flex flex-col`}
+                                                <span
+                                                    onClick={() => window.open(menuItem.page, "_blank", "noopener,noreferrer")}
+                                                    className={`group p-8 rounded-lg bg-blend-multiply hover:bg-blend-soft-light h-[15vh] relative overflow-hidden gap-1 flex flex-col cursor-pointer`}
                                                     key={index}>
                                                     <span
-                                                        className="absolute inset-0 bg-center bg-cover transition-transform duration-300 scale-100 hover:scale-105 bg-local bg-gray-500 bg-no-repeat rounded-lg bg-blend-multiply hover:bg-blend-soft-light "
+                                                        className="absolute inset-0 bg-center bg-cover transition-transform duration-300 scale-100 group-hover:scale-105 bg-local bg-gray-500 bg-no-repeat rounded-lg bg-blend-multiply hover:bg-blend-soft-light "
                                                         style={{ backgroundImage: `url('${menuItem.image}')` }}
                                                     ></span>
                                                     <span className="relative text-xl z-10 text-white">{menuItem.name}</span>
                                                     <p className="relative z-10 max-w-xl mb-5 text-white">
                                                         {menuItem.description}
                                                     </p>
-                                                </a>
+                                                </span>
                                             ) : null
                                         ))}
                                     </div>
