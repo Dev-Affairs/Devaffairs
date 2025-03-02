@@ -39,7 +39,7 @@ const pages = [
         link: '#'
     },
     {
-        name: 'Blog',
+        name: 'Articles',
         link: '#'
     },
     {

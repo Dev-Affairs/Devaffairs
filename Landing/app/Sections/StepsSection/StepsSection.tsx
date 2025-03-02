@@ -52,7 +52,7 @@ const StepsSection = () => {
                     className="flex flex-col justify-center"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                        From concept to completion, we craft every step to drive meaningful results.
+                        From concept to completion, we craft every step to drive meaningful results
                     </h2>
                     <p className="mt-4 text-lg text-gray-300">
                         Our approach keeps you engaged at every stage, ensuring the final product not only meets your expectations but also delivers tangible value to your business.

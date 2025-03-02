@@ -28,8 +28,6 @@ const ContactRefSection = () => {
                         className="text-white text-3xl md:text-5xl font-semibold leading-tight"
                     >
                         Bring Us Your Requirements
-                        {/* Simplifying Payments for <br />
-                        <span className="text-white">Growing Business</span> */}
                     </motion.h1>
 
                     <motion.p
@@ -40,7 +38,7 @@ const ContactRefSection = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                         className="text-gray-200 mt-4"
                     >
-                        <span>We will a high-performance solution that meets your needs and exceeds expectations</span>
+                        <span>We will translate your requirement into solution that meets your needs and exceeds your expectations</span>
                     </motion.p>
 
                     <motion.div 

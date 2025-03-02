@@ -142,7 +142,7 @@ const FeatureSection = () => {
           className={`p-6 rounded-lg shadow-md flex flex-col gap-4 transition-all duration-300 cursor-pointer bg-orange-500`}
         >
           <h1 className="text-5xl">
-            Analytics <br />And Insights
+            Analytics <br />& Insights
           </h1>
           <span className="text-lg">
             Dashboards and reports that help you make better decisions and drive growth.

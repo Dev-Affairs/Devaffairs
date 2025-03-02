@@ -45,8 +45,8 @@ function NavMenu() {
             ]
         },
         {
-            name: "Blog",
-            link: "/blog"
+            name: "Articles",
+            link: "/articles"
         },
         {
             name: "Contact Us",
