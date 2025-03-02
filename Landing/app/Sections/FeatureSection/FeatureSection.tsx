@@ -56,7 +56,7 @@ const FeatureSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0 }}
-          className={`bg-blue-700 hover:bg-blue-600 p-6 rounded-lg shadow-md flex flex-col gap-4 hover:shadow-xl transition-all duration-300 cursor-pointer select-none`}
+          className={`bg-blue-700 p-6 rounded-lg shadow-md flex flex-col gap-4 transition-all duration-300 cursor-pointer select-none`}
         >
           <div className="p-4">
             <h2 className="text-3xl mb-2 text-gray-100">Services</h2>
@@ -80,7 +80,7 @@ const FeatureSection = () => {
         >
           <div className="flex flex-col gap-4">
             <h3 className="text-3xl text-gray-800">Performance</h3>
-            <p className="text-gray-600 text-lg">We focus on building High Performance, secure, and scalable solutions that align with your goals and drive success.</p>
+            <p className="text-gray-600 text-lg">We focus on building high performance, secure, and scalable solutions that align with your goals and drive success.</p>
           </div>
           <div>
             {
@@ -125,8 +125,8 @@ const FeatureSection = () => {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
           className={`bg-gray-100 p-6 rounded-lg shadow-md flex flex-col gap-4 hover:shadow-lg transition-all duration-300 cursor-pointer md:col-span-2`}
         >
-          <h3 className="text-3xl text-gray-800">We are committed to building practical, efficient, and results driven solutions that truly make an impact.</h3>
-          <p className="text-gray-600 text-md">With a team of experienced Developers, Designers, and Tech experts, we take a client-first approach, ensuring each project is crafted with precision, creativity, and functionality. Whether you need
+          <h3 className="text-3xl text-gray-800">We build practical and results driven solutions that truly make an impact</h3>
+          <p className="text-gray-600 text-lg">With a team of experienced Developers, Designers, and Tech experts, we take a client-first approach, ensuring each project is crafted with precision, creativity, and functionality. Whether you need
             {
               ["sleek business website", "powerful web application", "workflow solution", "enterprise-grade software system"].map((item, index) => (
                 <span key={index}> a <span className={`text-gray`}>{` ${item}`}</span>, </span>
