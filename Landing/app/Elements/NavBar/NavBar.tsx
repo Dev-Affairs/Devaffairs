@@ -12,7 +12,7 @@ function NavBar() {
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
-            const hideThreshold = window.innerHeight * 0.7;
+            const hideThreshold = window.innerHeight * 0.5;
             
             if (currentScrollPos < prevScrollPos.current) {
                 setIsVisible(true);
