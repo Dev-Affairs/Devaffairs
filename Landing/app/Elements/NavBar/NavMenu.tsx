@@ -38,25 +38,7 @@ function NavMenu() {
                 {
                     name: "Invozapp",
                     image: "/images/dasboard_1.jpg",
-                    description: "Inventory and Invoices made easy."
-                },
-                {
-                    name: "Saam",
-                    image: "/images/dasboard_2.jpg",
-                    description: "Samms."
-                },
-                {
-                    items: [
-                        {
-                            name: "Our Blog",
-                            link: "ourBlogs"
-                        },
-                        {
-                            name: "Terms & Conditions",
-                            link: "terms"
-                        }
-                    ],
-                    name: ""
+                    description: "Inventory Management Solution."
                 }
             ]
         },
@@ -65,16 +47,8 @@ function NavMenu() {
             link: "/blog"
         },
         {
-            name: "Contact",
+            name: "Contact Us",
             link: "/contact"
-        },
-        {
-            name: "Team",
-            link: "/team"
-        },
-        {
-            name: "Page",
-            page: "https://google.com"
         }
     ]
 
@@ -165,7 +139,7 @@ function NavMenu() {
                                                         className="absolute inset-0 bg-center bg-cover transition-transform duration-300 scale-100 hover:scale-105 bg-local bg-gray-500 bg-no-repeat rounded-lg bg-blend-multiply hover:bg-blend-soft-light "
                                                         style={{ backgroundImage: `url('${menuItem.image}')` }}
                                                     ></span>
-                                                    <span className="relative text-lg z-10 text-white">{menuItem.name}</span>
+                                                    <span className="relative text-xl z-10 text-white">{menuItem.name}</span>
                                                     <p className="relative z-10 max-w-xl mb-5 text-white">
                                                         {menuItem.description}
                                                     </p>

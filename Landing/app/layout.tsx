@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/Elements/NavBar/NavBar";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Footer from "@/app/Elements/Footer/Footer";
+import BackgroundBlur from "./Elements/Backgrounds/BackgroundBlur/BackgroundBlur";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white select-none`}
       >
+        <BackgroundBlur />
         <NavBar />
-        {children}
+        <main className="relative z-10">{children}</main>
         <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );
