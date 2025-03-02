@@ -1,10 +1,5 @@
-"use client";
 import { Metadata } from "next";
-import Hero from "./Elements/Hero/Hero";
-import ContactRefSection from "./Sections/ContactRefSection/ContactRefSection";
-import FeatureSection from "./Sections/FeatureSection/FeatureSection";
-import StepsSection from "./Sections/StepsSection/StepsSection";
-import TechSection from "./Sections/TechSection/TechSection";
+import LandingPageWrapper from "@/app/Wrappers/LandingPageWrapper";
 
 export const metadata: Metadata = {
   title: "Dev Affairs",
@@ -33,11 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-      <FeatureSection />
-      <StepsSection />
-      <TechSection />
-      <ContactRefSection />
+      <LandingPageWrapper />
     </>
   );
 }
