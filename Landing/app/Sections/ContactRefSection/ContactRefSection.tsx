@@ -49,20 +49,21 @@ const ContactRefSection = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                         className="mt-6 flex flex-col sm:flex-row justify-center gap-4"
                     >
-                        <motion.button
+                        <motion.a
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-6 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-indigo-700 transition duration-300"
+                            href="/contact"
                         >
                             Contact us
-                        </motion.button>
-                        <motion.button
+                        </motion.a>
+                        {/* <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-6 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-indigo-700 transition duration-300"
                         >
                             Follow us
-                        </motion.button>
+                        </motion.button> */}
                     </motion.div>
                 </motion.div>
             </motion.div>
