@@ -4,7 +4,7 @@ import LandingPageWrapper from "@/app/Wrappers/LandingPageWrapper";
 export const metadata: Metadata = {
   title: "Dev Affairs",
   description: "Build Your Digital Solution",
-  keywords: ["Web Development", "Web Design", "App Development", "SEO", "Digital Marketing", "Dev Affairs"],
+  keywords: ["Web Development", "IT Services", "App Development", "SEO", "Digital Marketing", "Dev Affairs"],
   alternates: {
     canonical: `https://www.devaffairs.dev`,
   },
