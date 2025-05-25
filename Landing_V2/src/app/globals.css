@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+.main-margin{
+  @apply m-5 sm:m-8 md:m-10;
+}
+
+.text-basic{
+  @apply text-[#898989] dark:text-[#686868] text-sm font-semibold md:text-base;
+}
+
+.title-bg{
+  @apply dark:bg-white bg-[#ff7608] dark:text-black text-white inline-block px-2 py-1 rounded-2xl font-bold;
+}
+
+hr{
+  @apply border-black/20 dark:border-white/10;
+}
+
+/* Thin scrollbar with custom color */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 10px;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.3) transparent;
+}
+
+
+.head-1 {
+  @apply text-4xl sm:text-5xl font-extrabold tracking-tight text-black dark:text-white;
+}
+
+.head-2 {
+  @apply text-3xl sm:text-4xl font-bold tracking-tight text-black dark:text-white mt-8;
+}
+
+.head-3 {
+  @apply text-2xl sm:text-3xl font-semibold tracking-tight text-black dark:text-white mt-6;
+}
+
+.head-4 {
+  @apply text-xl sm:text-2xl font-medium tracking-tight text-black dark:text-white mt-5;
+}
+
+.head-5 {
+  @apply text-lg font-medium text-black dark:text-white mt-4;
+}
+
+.head-6 {
+  @apply text-base font-semibold text-gray-700 dark:text-gray-300 mt-3 uppercase;
+}
